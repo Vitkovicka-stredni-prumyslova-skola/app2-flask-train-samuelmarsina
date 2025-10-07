@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Moje stránka{% endblock %}</title>
+
+  <!-- link na externí CSS ve složce static -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <!-- vložení banneru -->
+  {% include 'baner.htm' %}
+
+  <!-- vložení menu -->
+  {% include 'menu.htm' %}
+
+  <main id="content">
+    {% block content %}
+    <!-- Výchozí obsah -->
+    <h1>Vítejte na mé stránce</h1>
+    <p>Toto je výchozí obsah, nahraďte ho v konkrétních šablonách.</p>
+    {% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; {{ current_year if current_year is defined else "2025" }} — Moje stránka</p>
+  </footer>
+</body>
+</html>
