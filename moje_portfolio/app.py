@@ -1,10 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template
+from data import users, nazev_webu, titulek_webu, popis, technologie
+from generator import generate_number
+app = Flask (__name__)
 
-app = Flask(__name__)
-
-@app.route('/')
+@app.route("/")
 def home():
-    return "Ahoj, Flask běží správně!"
+    titulek_webu = ("Portfolio od Marsiny")
+    nazev_webu = ("Samovo portfolio")
+    popis = ("Ukázka projektů, výuka s AI, a testování JItsi2")
+    technologie = ("Flask", "Python", "HTML", "CSS", "Jitsi2", "Copilot", "Javascript", "C#") 
 
-if __name__ == '__main__':
+@app.route("/generator")
+def generator():
+    return render_template("generator.htm", generate_number=generate_number) 
+
+if __name__ == "__main__":
     app.run(debug=True)
