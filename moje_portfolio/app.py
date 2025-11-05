@@ -42,7 +42,6 @@ def add_product():
 
     return redirect(url_for("search"))
 
-
 @app.route("/", methods=["GET", "POST"])
 def home():
     email = None

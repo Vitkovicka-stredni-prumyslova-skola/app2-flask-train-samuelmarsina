@@ -19,6 +19,18 @@
     </tr>
     {% endfor %}
 </table>
+
+<hr>
+
+<h2>Přidat produkt</h2>
+<form method="post" action="{{ url_for('add_product') }}">
+    <label>Název:</label>
+    <input type="text" name="name" required>
+    <label>Cena:</label>
+    <input type="number" name="price" step="0.01" required>
+    <input type="submit" value="Přidat">
+</form>
+
 {% elif q %}
 <p>Žádný produkt nenalezen.</p>
 {% endif %}
