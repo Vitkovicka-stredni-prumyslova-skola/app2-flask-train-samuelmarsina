@@ -1,30 +1,28 @@
-<!doctype html>
-<html lang="cs">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{% block title %}Moje stránka{% endblock %}</title>
-
-  <!-- link na externí CSS ve složce static -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tvorba webového portfolia ve Visual Studio Code</title>
 </head>
 <body>
-  <!-- vložení banneru -->
-  {% include 'baner.htm' %}
+    <title>Eshop</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f8f8f8; }
+        h1 { color: #333; }
+        table { border-collapse: collapse; width: 50%; background: white; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #eee; }
+        form { margin-bottom: 20px; }
+        input[type="text"], input[type="number"] { padding: 5px; }
+        input[type="submit"] { padding: 6px 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Eshop</h1>
+    {% include "menu.htm" %}
+    {% include "baner.htm" %}
+    {% block content %}{% endblock %}
 
-  <!-- vložení menu -->
-  {% include 'menu.htm' %}
-
-  <main id="content">
-    {% block content %}
-    <!-- Výchozí obsah -->
-    <h1>Vítejte na mé stránce</h1>
-    <p>Toto je výchozí obsah, nahraďte ho v konkrétních šablonách.</p>
-    {% endblock %}
-  </main>
-
-  <footer>
-    <p>&copy; {{ current_year if current_year is defined else "2025" }} — Moje stránka</p>
-  </footer>
 </body>
 </html>

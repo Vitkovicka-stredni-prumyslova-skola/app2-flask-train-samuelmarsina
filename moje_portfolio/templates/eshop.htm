@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="get" action="/">
+    <label>Vyhledat produkt:</label>
+    <input type="text" name="q" value="{{ q }}">
+    <input type="submit" value="Hledat">
+</form>
+
+{% if products %}
+<table>
+    <tr><th>ID</th><th>Název</th><th>Cena</th></tr>
+    {% for pid, p in products.items() %}
+    <tr>
+        <td>{{ pid }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.price }} Kč</td>
+    </tr>
+    {% endfor %}
+</table>
+{% elif q %}
+<p>Žádný produkt nenalezen.</p>
+{% endif %}
+
+{% endblock %}
