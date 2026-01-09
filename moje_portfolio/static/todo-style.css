@@ -1,0 +1,37 @@
+:root{
+    --primary-color: #003f5c;
+    --primary-color: #ff6361;
+    --h2-font-color: #ffa600;
+    --grey-color: #808080;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    color: var(--primary-color);
+}
+
+.done{
+    color: var(--grey-color);
+    text-decoration: line-through;
+}
+
+div#wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#inprocess, #outprocess{
+    border: var(--primary-color) 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--grey-color);
+}
+
+#wrapper{
+    background-color: gainsboro;
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid black;
+}
