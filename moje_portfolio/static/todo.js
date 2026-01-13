@@ -11,14 +11,21 @@ const inputCheckbox = document.createElement ("input");
 inputCheckbox.type = "checkbox";
 
 function addTask(text) {
+    const span = document.createElement("span");
+    const br = document.createElement("br");
 
+    const inputCheckbox = document.createElement ("input");
+    inputCheckbox.type = "checkbox";
 
-    
+    inProcess.appendChild{span};
+    inProcess.appendChild{br};
+    inProcess.appendChild{inputCheckbox};
 }
 
 createBtn.addEventListener("click", () => {
-console.log(input.value);
-input.value = "";
-input.focus();
+    console.log(input.value);
+    addTask(input.value);
+    input.value = "";
+    input.focus();
 
 });
