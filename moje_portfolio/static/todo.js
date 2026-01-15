@@ -3,6 +3,7 @@ const input = document.getElementById("inputTask");
 const createBtn = document.querySelector('form input [type="button"]');
 const inProcess = document.getElementById("inProcess");
 const outProcess = document.getElementById("outProcess");
+const clearDoneBtn = document.getElementById("clearDoneBtn")
 
 const span = document.createElement("span");
 const br = document.createElement("br");
@@ -27,16 +28,22 @@ function addTask(text) {
         doneCheckBox.checked = true;
 
         const doneSpan = document.createElement("span");
-        doneSpan.textContent = span.textContent;¨
+        doneSpan.textContent = span.textContent;
         doneSpan.classList.add("done");
 
         const doneBr = document.createElement ("Br");
 
         outProcess.appendChild(doneCheckbox);
         outProcess.appendChild(doneSpam);
-        outProcess.appendChild(doneBr);
-}
-)
+        outProcess.appendChild(doneBr); 
+
+        inProcess.removeChild(inputCheckbox);
+        inProcess.removeChild(span);
+        inProcess.removeChild(br);
+
+    }
+    )
+};
 
 createBtn.addEventListener("click", () => {
     console.log(input.value);
@@ -45,3 +52,11 @@ createBtn.addEventListener("click", () => {
     input.focus();
 
 });
+
+clearDoneBtn.addEventListener("click", () => {
+    clearDoneTasks();
+})
+
+function clearDoneTasks(params) {
+    outProcess.innerHTML = "";
+}
