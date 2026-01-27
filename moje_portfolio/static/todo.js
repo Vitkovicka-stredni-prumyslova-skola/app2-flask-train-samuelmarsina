@@ -1,62 +1,66 @@
-
 const input = document.getElementById("inputTask");
-const createBtn = document.querySelector('form input [type="button"]');
+const createBtn = document.querySelector('form input[type="button"]');
 const inProcess = document.getElementById("inProcess");
 const outProcess = document.getElementById("outProcess");
-const clearDoneBtn = document.getElementById("clearDoneBtn")
-
-const span = document.createElement("span");
-const br = document.createElement("br");
-
-const inputCheckbox = document.createElement ("input");
-inputCheckbox.type = "checkbox";
+const clearDoneBtn = document.getElementById("clearDoneBtn");
 
 function addTask(text) {
+    const clean = text.trim();
+    if (!clean) return;
+
+    const row = document.createElement("div");
+
+    const cb = document.createElement("input");
+    cb.type = "checkbox";
+
     const span = document.createElement("span");
-    const br = document.createElement("br");
+    span.textContent = clean;
 
-    const inputCheckbox = document.createElement ("input");
-    inputCheckbox.type = "checkbox";
+    row.appendChild(cb);
+    row.appendChild(span);
+    inProcess.appendChild(row);
 
-    inProcess.appendChild(span);
-    inProcess.appendChild(br);
-    inProcess.appendChild(inputCheckbox);
+    cb.addEventListener("change", () => {
+        if (cb.checked) {
+            span.classList.add("done");
+            outProcess.appendChild(row);
+        } else {
+            span.classList.remove("done");
+            inProcess.appendChild(row);
+        }
 
-    inputCheckbox.addEventListener("change", () => {
-        const doneCheckBox = document.createElement("input");
-        doneCheckBox.type = "checkbox";
-        doneCheckBox.checked = true;
+        if (inProcess.children.length === 0) {
+            inProcess.innerHTML = "<i>Žádné úkoly v procesu</i>";
+            inProcess.classList.add("none");
+        } else {
+            inProcess.getElementsByTagName("i")[0]?.remove();
+            inProcess.classList.remove("none");
+        }
+    });
+}
 
-        const doneSpan = document.createElement("span");
-        doneSpan.textContent = span.textContent;
-        doneSpan.classList.add("done");
-
-        const doneBr = document.createElement ("Br");
-
-        outProcess.appendChild(doneCheckbox);
-        outProcess.appendChild(doneSpam);
-        outProcess.appendChild(doneBr); 
-
-        inProcess.removeChild(inputCheckbox);
-        inProcess.removeChild(span);
-        inProcess.removeChild(br);
-
-    }
-    )
-};
 
 createBtn.addEventListener("click", () => {
-    console.log(input.value);
-    addTask(input.value);
-    input.value = "";
-    input.focus();
-
+addTask(input.value);
+input.value = "";
+input.focus();
 });
 
-clearDoneBtn.addEventListener("click", () => {
-    clearDoneTasks();
-})
+input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        createBtn.click();
+    }
+});
 
-function clearDoneTasks(params) {
-    outProcess.innerHTML = "";
+
+clearDoneBtn.addEventListener("click", () => {
+outProcess.innerHTML = "";
+const result=confirm("Chcete opravdu smazat všechny dokončené úkoly?");
+if (result) {
+    alert("Všechny dokončené úkoly byly smazány.");
 }
+else {
+    alert("Smazání dokončených úkolů bylo zrušeno.");
+    }
+});
