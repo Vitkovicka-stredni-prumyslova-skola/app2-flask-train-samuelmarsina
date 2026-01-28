@@ -120,5 +120,9 @@ def javascript():
 def todo():
     return render_template("todo.htm")
 
+@app.route("/regform")
+def regform():
+    return render_template("reg-form.htm")
+
 if __name__ == "__main__":
     app.run(debug=True)
