@@ -1,0 +1,45 @@
+{% extends "base.htm" %}
+
+{% block title %}Úvod{% endblock %}
+
+{% block content %}
+  <div class="p-4 p-md-5 mb-4 rounded bg-light border">
+    <h1 class="display-6">Bootstrap je zapnutý ✅</h1>
+    <p class="lead mb-0">
+      Tohle je rychlý start: žádné build tooly, jen CDN.
+    </p>
+  </div>
+
+  <div class="alert alert-success" role="alert">
+    Alert komponenta — hotová UI část bez vlastního CSS.
+  </div>
+
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Grid</h5>
+          <p class="card-text">Na mobilu 1 sloupec, od <code>md</code> dva.</p>
+          <button class="btn btn-primary">Primární tlačítko</button>
+          <button class="btn btn-outline-secondary">Outline</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Utilities</h5>
+          <p class="card-text">
+            Bootstrap má spoustu tříd typu <code>p-4</code>, <code>mb-3</code>, <code>text-center</code>.
+          </p>
+          <div class="d-flex gap-2">
+            <span class="badge text-bg-dark">badge</span>
+            <span class="badge text-bg-info">info</span>
+            <span class="badge text-bg-warning">warning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
