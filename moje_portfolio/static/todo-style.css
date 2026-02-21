@@ -1,0 +1,42 @@
+:root{
+    --primary-color: #58508d;
+    --secondary-color: #003f5c;
+    --h2-font-color: #ffa600;
+    --grey-color: #808080;
+}
+
+
+
+body{
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.done{
+    color:var(--grey-color);
+    text-decoration: line-through;
+}
+.none{
+    color: green;
+}
+
+.divwrapper{
+    width:1000px;
+    margin: 0 auto;
+}
+
+#inProcess, #outProcess{
+    border: var(--primary-color) 2px solid;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#wrapper{
+    background-color: gainsboro;
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid black;
+}

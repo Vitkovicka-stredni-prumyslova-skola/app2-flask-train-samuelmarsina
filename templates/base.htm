@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tvorba webového portfolia ve Visual Studio Code</title>
+</head>
+<body>
+    <title>Eshop</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f8f8f8; }
+        h1 { color: #333; }
+        table { border-collapse: collapse; width: 50%; background: white; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #eee; }
+        form { margin-bottom: 20px; }
+        input[type="text"], input[type="number"] { padding: 5px; }
+        input[type="submit"] { padding: 6px 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Eshop</h1>
+    {% include "menu.htm" %}
+    {% include "baner.htm" %}
+    {% block content %}{% endblock %}
+
+</body>
+</html>
