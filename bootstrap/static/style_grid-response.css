@@ -1,19 +1,53 @@
 header {
     grid-area: header;
+    background-color: aquamarine;
 }
 
 nav {
     grid-area: nav;
+    background-color: lightgray;
 }
 
 main {
     grid-area: main;
+    background-color: lightblue;
 }
 
 footer {
     grid-area: footer;
+    background-color: lightcoral;
 }
 
 aside {
     grid-area: aside;
+    background-color: lightgreen;
+}
+
+#box1{
+    background-color: palevioletred;
+    grid-area: aside;
+}
+
+#box2{
+    background-color: rgb(94, 90, 91);
+    grid-area: aside;
+}
+
+#box3{
+    background-color: rgb(18, 165, 145);
+    grid-area: aside;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 100px);
+    gap:10px;
+    grid-template-areas:
+        "header header header header header"
+        "nav main main main box1"
+        "nav main main main box2"
+        "nav main main main box3"
+        ". box4 box5 box6 ."
+        "footer footer footer footer footer";
 }
