@@ -1,0 +1,9 @@
+body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.5; }
+.container { max-width:1100px; margin:0 auto; padding:0 16px; }
+.site-banner { background:#f4f4f4; padding:20px 0; border-bottom:1px solid #ddd; }
+.logo a { text-decoration:none; color:#222; font-size:1.4rem; }
+.site-nav { background:#333; }
+.site-nav .nav-list { list-style:none; margin:0; padding:8px 16px; display:flex; gap:12px; }
+.site-nav .nav-list a { color:#fff; text-decoration:none; padding:6px 8px; display:inline-block; }
+main#content { padding:24px 0; }
+footer { background:#f8f8f8; padding:12px 0; text-align:center; border-top:1px solid #eee; }
