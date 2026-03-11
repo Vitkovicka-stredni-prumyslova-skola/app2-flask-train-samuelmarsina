@@ -42,7 +42,7 @@ aside {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 100px);
-    gap:10px;
+    gap: 10px;
     grid-template-areas:
         "header header header header header"
         "nav main main main box1"
@@ -50,4 +50,30 @@ aside {
         "nav main main main box3"
         ". box4 box5 box6 ."
         "footer footer footer footer footer";
+        gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(6, 100px);
+        gap: 10px;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "box1"
+        "box2"
+        "box3"
+        "box4"
+        "box5"
+        "box6"
+        "footer";
+        gap: 0px;
+    }
+
+    #box4, #box5, #box6{
+        display: none;
+    }
 }
