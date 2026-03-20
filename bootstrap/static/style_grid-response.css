@@ -53,6 +53,17 @@ aside {
         gap: 10px;
 }
 
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu a {
+    
+}
+
 @media (max-width: 768px) {
     .container {
         display: grid;
