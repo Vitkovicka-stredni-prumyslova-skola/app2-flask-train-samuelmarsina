@@ -45,6 +45,7 @@ aside {
     gap: 10px;
     grid-template-areas:
         "header header header header header"
+        ". nav nav nav ."
         "nav main main main box1"
         "nav main main main box2"
         "nav main main main box3"
@@ -56,12 +57,22 @@ aside {
 .menu {
     list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 .menu a {
-    
+    display: block;
+    text-decoration: none;
+    color: #222;
+    background-color: #cfe8ff;
+    padding: 14px, 16px;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: 0.25s;
 }
 
 @media (max-width: 768px) {
