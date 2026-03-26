@@ -1,0 +1,22 @@
+{% extends "base.htm" %}
+
+{% block content %}
+<section class="content" role="region" aria-label="O mně">
+  <p>Ve volném čase rád programuju malé projekty, experimentuji s novými věcmi a učím se tak s nimi do budoucna pracovat a
+    chodím samozřejmě na procházky, které mi pomáhají načerpat nové nápady a vyčistit hlavu, což je pro programátora klíčové. </p>
+  <p>
+    Na obor IT jsem se dal z důvodu, že mě celkově baví tak experimentovat s kódem a dalšími věcmi, co do oboru IT zapadá.
+    Taktéž mě motivovalo to, že můj bratr taky šel na obor IT, takže je to taková bratrská zkušenost 👌
+  </p>
+</section>
+
+<form method="get">
+  Zadejte svou E-Mailovou adresu: <input type="text" name="email">
+  <input type="submit" value="Odeslat"> 
+</form>
+<p>
+  Děkujeme za váš email!
+</p>
+
+  <script src="/static/dom.js"></script>
+{% endblock %}
