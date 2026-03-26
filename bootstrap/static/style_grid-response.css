@@ -58,7 +58,7 @@ aside {
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 0px;
     justify-content: center;
     margin: 0;
     padding: 0;
@@ -73,6 +73,10 @@ aside {
     font-size: 20px;
     border-radius: 10px;
     transition: 0.25s;
+}
+
+.menu ul {
+    display: flex;
 }
 
 @media (max-width: 768px) {
