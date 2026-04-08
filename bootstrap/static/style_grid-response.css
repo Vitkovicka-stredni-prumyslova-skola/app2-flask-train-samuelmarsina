@@ -75,6 +75,10 @@ aside {
     transition: 0.25s;
 }
 
+.menu a:hover {
+    background-color: #a0d4ff;
+}
+
 .menu ul {
     display: flex;
 }
@@ -97,6 +101,11 @@ aside {
         "box6"
         "footer";
         gap: 0px;
+    }
+
+    .menu li {
+        flex: none;
+        width: 100%;
     }
 
     #box4, #box5, #box6{
