@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%for id, user in users,items() %}
+
+    {% if user.is_authenticated %}
+
+    {%else %}
+    
+    {%endif %}
+</body>
+</html>
+{% extends "base.htm" %}
+
+{% block content %}
+
+    {{users [1], jmeno}}
+    <table>
+        <thead>
+            <tr>
+                <th>Jméno</th>
+                <th>E-Mail</th>
+                <th>Telefon</th>
+                <th>Adresa</th>
+                <th>Poznámka</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Jméno">{{user.jmeno}}</td>
+                <td data-label="E-Mail">{{user.email}}</td>
+                <td data-label="Telefon">{{user.telefon}}</td>
+                <td data-label="Adresa">{{user.adresa}}</td>
+                <td data-label="Poznámka">{{user.poznamka}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+<div id="emptyState" class="empty" hidden>
+    Žádné výsledky...
+</div>    
+{% endblock %}
