@@ -1,6 +1,21 @@
 header {
     grid-area: header;
     background-color: aquamarine;
+    height: 300PX;
+    width: 
+}
+
+.slider{
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 nav {
